@@ -14,14 +14,18 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.courses, id: \.self) { course in
-                    HStack {
-                        URLImage(urlString: course.image)
-
-                        
-                        Text(course.name)
-                            .bold()
-                    }.padding(3)
+                    
+                    NavigationLink(destination: CourseDetailsScreen(course: course)) {
+                        HStack {
+                            URLImage(urlString: course.image)
+                            
+                            Text(course.name)
+                                .bold()
+                        }
+                    }
+                        .padding(3)
                 }
+                
             }
             .navigationTitle("Courses")
             .onAppear {
