@@ -13,13 +13,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.courses, id: \.self) { course in
+                ForEach(viewModel.tvShows) { tvShow in
                     
-                    NavigationLink(destination: CourseDetailsScreen(course: course)) {
+                    NavigationLink(destination: CourseDetailsScreen(tvShow: tvShow)) {
                         HStack {
-                            URLImage(urlString: course.image)
+                            URLImage(urlString: tvShow.show.image.medium)
                             
-                            Text(course.name)
+                            Text(tvShow.show.name)
                                 .bold()
                         }
                     }

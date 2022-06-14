@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct CourseDetailsScreen: View {
-    var course: Course
+    var tvShow: TvShow
     
     var body: some View {
         VStack {
-            URLImage(urlString: course.image)
-            Text(course.name)
+            URLImage(urlString: tvShow.show.image.original)
+            Text(tvShow.show.name)
 
         }
     }
 }
 
-struct CourseDetailsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseDetailsScreen(course: Course(name: "Title", image: "https://iosacademy.io/assets/images/courses/tiktok.png"))
-    }
-}
+//struct CourseDetailsScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CourseDetailsScreen()
+//    }
+//}

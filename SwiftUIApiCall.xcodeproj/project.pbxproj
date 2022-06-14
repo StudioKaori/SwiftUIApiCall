@@ -14,6 +14,7 @@
 		436F42C928591A5B00478872 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42C828591A5B00478872 /* ViewModel.swift */; };
 		436F42CD28591D6A00478872 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42CC28591D6A00478872 /* URLImage.swift */; };
 		436F42D128591F1A00478872 /* CourseDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42D028591F1A00478872 /* CourseDetailsScreen.swift */; };
+		436F42D32859288A00478872 /* SampleTvShowObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42D22859288A00478872 /* SampleTvShowObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		436F42C828591A5B00478872 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		436F42CC28591D6A00478872 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		436F42D028591F1A00478872 /* CourseDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsScreen.swift; sourceTree = "<group>"; };
+		436F42D22859288A00478872 /* SampleTvShowObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTvShowObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				436F42BE2859136700478872 /* Assets.xcassets */,
 				436F42C02859136700478872 /* Preview Content */,
 				436F42C828591A5B00478872 /* ViewModel.swift */,
+				436F42D22859288A00478872 /* SampleTvShowObject.swift */,
 			);
 			path = SwiftUIApiCall;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				436F42D128591F1A00478872 /* CourseDetailsScreen.swift in Sources */,
 				436F42BB2859136500478872 /* SwiftUIApiCallApp.swift in Sources */,
 				436F42CD28591D6A00478872 /* URLImage.swift in Sources */,
+				436F42D32859288A00478872 /* SampleTvShowObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
