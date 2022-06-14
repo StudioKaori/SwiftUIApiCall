@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                ForEach(viewModel.courses, id: \.self) { course in
+                    HStack {
+                        URLImage(urlString: course.image)
+
+                        
+                        Text(course.name)
+                            .bold()
+                    }.padding(3)
+                }
+            }
+            .navigationTitle("Courses")
+            .onAppear {
+                viewModel.fetch()
+            }
+        }
+        
     }
 }
 
