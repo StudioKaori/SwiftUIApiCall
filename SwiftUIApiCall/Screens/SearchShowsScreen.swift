@@ -24,13 +24,14 @@ struct SearchShowsScreen: View {
                                 .medium ?? "")
                             .frame(width: 70, height: 70)
                             .background(Color.gray)
+                            .cornerRadius(4)
                             
                             Text(tvShow.show.name)
                                 .bold()
                         }
                     }
                     .padding(.horizontal, 2)
-                    .padding(.vertical, 12)
+                    .padding(.vertical, 6)
                 }
                 
             }
