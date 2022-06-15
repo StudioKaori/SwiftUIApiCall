@@ -8,23 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct Show: Codable {
-    let name: String
-    let image: ShowImage?
-}
-
-struct ShowImage: Codable {
-    let medium: String
-    let original: String
-}
-
-struct TvShow: Codable, Identifiable {
-    var id = UUID()
-    let show: Show
-    
-    private enum CodingKeys : String, CodingKey { case show }
-}
-
 class ViewModel: ObservableObject {
     @Published var tvShows: [TvShow] = []
     

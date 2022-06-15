@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SearchShowsScreen: View {
     // MARK: - Properties
     @StateObject private var viewModel = ViewModel()
     @State private var searchWord = ""
@@ -56,6 +56,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SearchShowsScreen()
     }
 }
