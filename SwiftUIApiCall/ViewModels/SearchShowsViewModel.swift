@@ -16,6 +16,8 @@ class SearchShowsViewModel: ObservableObject {
     
     /// Search TV shows from TVMAZE by string query.
     func searchShows(query: String) {
+        let query = query.replacingOccurrences(of: " ", with: "")
+        
         guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=\(query)") else {
             return
         }
