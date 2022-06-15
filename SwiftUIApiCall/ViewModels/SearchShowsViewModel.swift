@@ -36,7 +36,6 @@ class SearchShowsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self?.tvShows = tvShows
                 }
-                print(tvShows)
             }
             catch {
                 print("JSONDecoder Error: \(error)")

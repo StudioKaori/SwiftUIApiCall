@@ -26,8 +26,19 @@ struct SearchShowsScreen: View {
                             .background(Color.gray)
                             .cornerRadius(4)
                             
-                            Text(tvShow.show.name)
-                                .bold()
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(tvShow.show.name)
+                                    .bold()
+                                
+                                HStack {
+                                    Text(tvShow.show.premiered?.prefix(4).appending(" -") ?? "")
+                                        .font(.footnote)
+                                    
+                                    Text(tvShow.show.ended?.prefix(4) ?? "")
+                                        .font(.footnote)
+                                }
+                            }
+
                         }
                     }
                     .padding(.horizontal, 2)
