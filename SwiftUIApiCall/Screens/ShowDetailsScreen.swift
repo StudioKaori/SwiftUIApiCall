@@ -15,7 +15,9 @@ struct ShowDetailsScreen: View {
     var body: some View {
         VStack {
             URLImage(urlString: tvShow.show.image?.original ?? "")
+            
             Text(tvShow.show.name)
+            Text(tvShow.show.summary ?? "")
 
         }
     }
