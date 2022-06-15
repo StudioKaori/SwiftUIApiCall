@@ -18,7 +18,8 @@ struct ContentView: View {
                     
                     NavigationLink(destination: CourseDetailsScreen(tvShow: tvShow)) {
                         HStack {
-                            URLImage(urlString: tvShow.show.image.medium)
+                            URLImage(urlString: tvShow.show.image?
+                                .medium ?? "")
                             
                             Text(tvShow.show.name)
                                 .bold()

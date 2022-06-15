@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Show: Codable {
     let name: String
-    let image: ShowImage
+    let image: ShowImage?
 }
 
 struct ShowImage: Codable {
