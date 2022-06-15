@@ -10,6 +10,30 @@ import Foundation
 struct Show: Codable {
     let name: String
     let image: ShowImage?
+    let premiered: String?
+    let ended: String?
+    let status: String
+    let type: String
+    let language: String
+    let url: String
+    let officialSite: String?
+    let rating: Rating
+    let schedule: Schedule
+    let summary: String?
+}
+
+struct Rating: Codable {
+    let average: Double?
+}
+
+struct Schedule: Codable {
+    let time: String
+    let days: [String]
+}
+
+struct WebChannel {
+    let name: String
+    let officialSite: String
 }
 
 struct ShowImage: Codable {
