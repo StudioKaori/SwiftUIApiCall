@@ -18,15 +18,11 @@ struct URLImage: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 130, height: 70)
-                .background(Color.gray)
             
         }else {
             Image(systemName: "video")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 130, height: 70)
-                .background(Color.gray)
+                .aspectRatio(contentMode: .fit)
                 .onAppear {
                     fetchData()
                 }

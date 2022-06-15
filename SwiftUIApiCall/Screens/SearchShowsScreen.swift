@@ -22,12 +22,15 @@ struct SearchShowsScreen: View {
                         HStack {
                             URLImage(urlString: tvShow.show.image?
                                 .medium ?? "")
+                            .frame(width: 70, height: 70)
+                            .background(Color.gray)
                             
                             Text(tvShow.show.name)
                                 .bold()
                         }
                     }
-                        .padding(3)
+                    .padding(.horizontal, 2)
+                    .padding(.vertical, 12)
                 }
                 
             }
@@ -35,6 +38,9 @@ struct SearchShowsScreen: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: HStack {
                 URLImage(urlString:  "https://static.tvmaze.com/images/tvm-header-logo.png")
+                    .frame(width: 50, height: 50)
+                    .background(Color.gray)
+                
                 TextField("Search...", text: $searchWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
