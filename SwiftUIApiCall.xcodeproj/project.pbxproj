@@ -65,7 +65,7 @@
 				43FAD9362859E16C00DE3B61 /* Screens */,
 				43FAD9352859E16300DE3B61 /* ViewModels */,
 				43FAD9342859E15A00DE3B61 /* Models */,
-				436F42CC28591D6A00478872 /* URLImage.swift */,
+				43FAD9392859FB2000DE3B61 /* Extentions */,
 				436F42BE2859136700478872 /* Assets.xcassets */,
 				436F42C02859136700478872 /* Preview Content */,
 			);
@@ -104,6 +104,14 @@
 				43FAD9372859F12B00DE3B61 /* SafariWebViewScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		43FAD9392859FB2000DE3B61 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				436F42CC28591D6A00478872 /* URLImage.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
