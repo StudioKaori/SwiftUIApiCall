@@ -34,7 +34,7 @@ struct Schedule: Codable {
 
 struct WebChannel: Codable {
     let name: String
-    let officialSite: String
+    let officialSite: String?
 }
 
 struct ShowImage: Codable {
