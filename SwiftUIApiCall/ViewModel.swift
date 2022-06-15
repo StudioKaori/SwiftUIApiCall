@@ -28,16 +28,16 @@ struct TvShow: Codable, Identifiable {
 class ViewModel: ObservableObject {
     @Published var tvShows: [TvShow] = []
     
-//    func fetch(query: String) {
-//        guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=\(query)") else {
-//        return
-//    }
+    func fetch(query: String) {
+        guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=\(query)") else {
+        return
+    }
         
-        func fetch() {
-            print("fetch")
-            guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=girl") else {
-            return
-        }
+//        func fetch() {
+//            print("fetch")
+//            guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=girl") else {
+//            return
+//        }
     
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {

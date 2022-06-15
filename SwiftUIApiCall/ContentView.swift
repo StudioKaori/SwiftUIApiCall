@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject private var viewModel = ViewModel()
+    @State private var searchWord = ""
     
     var body: some View {
         NavigationView {
@@ -28,9 +29,24 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Courses")
-            .onAppear {
-                viewModel.fetch()
-            }
+            .navigationBarItems(leading: HStack {
+                TextField("Search...", text: $searchWord)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.asciiCapable)
+                    .frame(width: UIScreen.main.bounds.width - 40)
+            })
+            .onChange(of: searchWord,
+                      perform: { searchWord in
+                if searchWord != "", searchWord != " " {
+                    viewModel.fetch(query: searchWord)
+                }else{
+                    viewModel.tvShows = []
+                }
+                
+            })
+//            .onAppear {
+//                viewModel.fetch()
+//            }
         }
         
     }
