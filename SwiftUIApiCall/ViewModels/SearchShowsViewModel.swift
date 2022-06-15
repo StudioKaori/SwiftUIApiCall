@@ -8,20 +8,18 @@
 import Foundation
 import SwiftUI
 
-class ViewModel: ObservableObject {
+class SearchShowsViewModel: ObservableObject {
+    // MARK: - Properties
     @Published var tvShows: [TvShow] = []
     
-    func fetch(query: String) {
-        guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=\(query)") else {
-        return
-    }
-        
-//        func fetch() {
-//            print("fetch")
-//            guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=girl") else {
-//            return
-//        }
+    // MARK: - Methods
     
+    /// Search TV shows from TVMAZE by string query.
+    func searchShows(query: String) {
+        guard let url = URL(string: "https://api.tvmaze.com/search/shows?q=\(query)") else {
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {
                 print("Fetching data error")
@@ -43,7 +41,6 @@ class ViewModel: ObservableObject {
             }
             
         }
-        
         task.resume()
     }
 }

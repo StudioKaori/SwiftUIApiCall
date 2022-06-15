@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SearchShowsScreen: View {
     // MARK: - Properties
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var searchShowsViewModel = SearchShowsViewModel()
     @State private var searchWord = ""
     
     // MARK: - Body
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.tvShows) { tvShow in
+                ForEach(searchShowsViewModel.tvShows) { tvShow in
                     
                     NavigationLink(destination: ShowDetailsScreen(tvShow: tvShow)) {
                         HStack {
@@ -43,9 +43,9 @@ struct SearchShowsScreen: View {
             .onChange(of: searchWord,
                       perform: { searchWord in
                 if searchWord != "", searchWord != " " {
-                    viewModel.fetch(query: searchWord)
+                    searchShowsViewModel.searchShows(query: searchWord)
                 }else{
-                    viewModel.tvShows = []
+                    searchShowsViewModel.tvShows = []
                 }
                 
             })
