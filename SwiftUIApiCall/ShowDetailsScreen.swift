@@ -1,5 +1,5 @@
 //
-//  CourseDetailsScreen.swift
+//  ShowDetailsScreen.swift
 //  SwiftUIApiCall
 //
 //  Created by Kaori Persson on 2022-06-14.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CourseDetailsScreen: View {
+struct ShowDetailsScreen: View {
     var tvShow: TvShow
     
     var body: some View {
@@ -19,8 +19,8 @@ struct CourseDetailsScreen: View {
     }
 }
 
-//struct CourseDetailsScreen_Previews: PreviewProvider {
+//struct ShowDetailsScreen_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CourseDetailsScreen()
+//        ShowDetailsScreen()
 //    }
 //}

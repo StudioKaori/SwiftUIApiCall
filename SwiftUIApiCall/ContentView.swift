@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
     @StateObject private var viewModel = ViewModel()
     @State private var searchWord = ""
     
+    // MARK: - Body
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.tvShows) { tvShow in
                     
-                    NavigationLink(destination: CourseDetailsScreen(tvShow: tvShow)) {
+                    NavigationLink(destination: ShowDetailsScreen(tvShow: tvShow)) {
                         HStack {
                             URLImage(urlString: tvShow.show.image?
                                 .medium ?? "")
@@ -47,9 +49,6 @@ struct ContentView: View {
                 }
                 
             })
-//            .onAppear {
-//                viewModel.fetch()
-//            }
         }
         
     }
