@@ -59,7 +59,7 @@ struct SearchShowsScreen: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: HStack (alignment: .center, spacing: 6) {
                 
-                TextField("Search...", text: $searchWord)
+                TextField("Search TV Shows...", text: $searchWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
                     .frame(width: UIScreen.main.bounds.width - 40)

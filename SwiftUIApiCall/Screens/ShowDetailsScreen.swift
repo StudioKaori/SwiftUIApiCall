@@ -43,6 +43,7 @@ struct ShowDetailsScreen: View {
                     Text(String(tvShow.show.rating.average ?? 0))
                         .font(.footnote)
                 }
+                .padding()
                 
                 if let url = URL(string: tvShow.show.webChannel?.officialSite ?? "") {
                     NavigationLink(destination: SafariWebViewScreen(url: url)) {
