@@ -29,8 +29,10 @@ struct ContentView: View {
                 }
                 
             }
-            .navigationTitle("Courses")
+            .navigationTitle("TVMAZE Search")
+            .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: HStack {
+                URLImage(urlString:  "https://static.tvmaze.com/images/tvm-header-logo.png")
                 TextField("Search...", text: $searchWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
