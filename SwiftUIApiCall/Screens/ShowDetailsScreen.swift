@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ShowDetailsScreen: View {
+    // MARK: - Properties
     var tvShow: TvShow
     
+    // MARK: - Body
     var body: some View {
         VStack {
             URLImage(urlString: tvShow.show.image?.original ?? "")

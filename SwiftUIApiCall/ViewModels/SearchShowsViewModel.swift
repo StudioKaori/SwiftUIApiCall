@@ -24,20 +24,19 @@ class SearchShowsViewModel: ObservableObject {
             guard let data = data, error == nil else {
                 print("Fetching data error")
                 if let error = error {
-                    print("Error: \(error)")
+                    print("Error details: \(error)")
                 }
                 return
             }
             
             do {
-                let courses = try JSONDecoder().decode([TvShow].self, from: data)
-                print(courses)
+                let tvShows = try JSONDecoder().decode([TvShow].self, from: data)
                 DispatchQueue.main.async {
-                    self?.tvShows = courses
+                    self?.tvShows = tvShows
                 }
             }
             catch {
-                print("Error: \(error)")
+                print("JSONDecoder Error: \(error)")
             }
             
         }
