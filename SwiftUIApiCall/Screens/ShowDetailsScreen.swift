@@ -16,8 +16,18 @@ struct ShowDetailsScreen: View {
         VStack {
             URLImage(urlString: tvShow.show.image?.original ?? "")
             
-            Text(tvShow.show.name)
-            Text(tvShow.show.summary ?? "")
+            ScrollView {
+                Text(tvShow.show.name)
+                Text(tvShow.show.summary ?? "")
+                if let url = URL(string: tvShow.show.url) {
+                    NavigationLink(destination: SafariWebViewScreen(url: url)) {
+                        Text(tvShow.show.url)
+                    }
+                }
+            }
+            
+
+            
 
         }
     }
