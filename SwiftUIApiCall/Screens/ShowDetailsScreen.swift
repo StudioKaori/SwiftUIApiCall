@@ -13,11 +13,17 @@ struct ShowDetailsScreen: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            URLImage(urlString: tvShow.show.image?.original ?? "")
-            
+        
+        VStack(alignment: .leading, spacing: 10) {
+        URLImage(urlString: tvShow.show.image?.original ?? "")
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 400)
+            .padding(.bottom, 60)
+        
             ScrollView {
+
+            
                 Text(tvShow.show.name)
+                    .font(.largeTitle)
                 Text(tvShow.show.summary ?? "")
                 if let url = URL(string: tvShow.show.url) {
                     NavigationLink(destination: SafariWebViewScreen(url: url)) {
@@ -25,11 +31,9 @@ struct ShowDetailsScreen: View {
                     }
                 }
             }
-            
-
-            
-
         }
+        .ignoresSafeArea(.all, edges: .top)
+
     }
 }
 
