@@ -36,6 +36,15 @@ struct SearchShowsScreen: View {
                                     
                                     Text(tvShow.show.ended?.prefix(4) ?? "")
                                         .font(.footnote)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "star.fill")
+                                        .font(.footnote)
+                                        .foregroundColor(Color.gray)
+                                    
+                                    Text(String(tvShow.show.rating.average ?? 0))
+                                        .font(.footnote)
                                 }
                             }
 
@@ -48,15 +57,15 @@ struct SearchShowsScreen: View {
             }
             .navigationTitle("TVMAZE Search")
             .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(leading: HStack {
+            .navigationBarItems(leading: HStack (alignment: .center, spacing: 6) {
                 URLImage(urlString:  "https://static.tvmaze.com/images/tvm-header-logo.png")
-                    .frame(width: 50, height: 50)
+                    .frame(width: 60, height: 30)
                     .background(Color.gray)
                 
                 TextField("Search...", text: $searchWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
-                    .frame(width: UIScreen.main.bounds.width - 40)
+                    .frame(width: UIScreen.main.bounds.width - 120)
             })
             .onChange(of: searchWord,
                       perform: { searchWord in
