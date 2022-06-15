@@ -20,6 +20,7 @@ struct Show: Codable {
     let rating: Rating
     let schedule: Schedule
     let summary: String?
+    let webChannel: WebChannel?
 }
 
 struct Rating: Codable {
@@ -31,7 +32,7 @@ struct Schedule: Codable {
     let days: [String]
 }
 
-struct WebChannel {
+struct WebChannel: Codable {
     let name: String
     let officialSite: String
 }

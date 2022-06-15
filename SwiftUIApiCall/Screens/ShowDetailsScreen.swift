@@ -24,13 +24,37 @@ struct ShowDetailsScreen: View {
             
                 Text(tvShow.show.name)
                     .font(.largeTitle)
-                Text(tvShow.show.summary ?? "")
-                if let url = URL(string: tvShow.show.url) {
-                    NavigationLink(destination: SafariWebViewScreen(url: url)) {
-                        Text(tvShow.show.url)
-                    }
+                    .padding()
+                
+                HStack {
+                    Text(tvShow.show.premiered?.appending(" -") ?? "")
+                        .font(.footnote)
+                    
+                    Text(tvShow.show.ended ?? "")
+                        .font(.footnote)
+                    
+                    Text("(\(tvShow.show.status))")
+                        .font(.footnote)
+                    
+                    Image(systemName: "star.fill")
+                        .font(.footnote)
+                        .foregroundColor(Color.gray)
+                    
+                    Text(String(tvShow.show.rating.average ?? 0))
+                        .font(.footnote)
                 }
+                
+                if let url = URL(string: tvShow.show.webChannel?.officialSite ?? "") {
+                    NavigationLink(destination: SafariWebViewScreen(url: url)) {
+                        Text(tvShow.show.webChannel?.name ?? "Official web site")
+                    }
+                    .padding()
+                }
+                
+                Text(tvShow.show.summary ?? "")
+
             }
+            .padding()
         }
         .ignoresSafeArea(.all, edges: .top)
 

@@ -58,14 +58,11 @@ struct SearchShowsScreen: View {
             .navigationTitle("TVMAZE Search")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: HStack (alignment: .center, spacing: 6) {
-                URLImage(urlString:  "https://static.tvmaze.com/images/tvm-header-logo.png")
-                    .frame(width: 60, height: 30)
-                    .background(Color.gray)
                 
                 TextField("Search...", text: $searchWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
-                    .frame(width: UIScreen.main.bounds.width - 120)
+                    .frame(width: UIScreen.main.bounds.width - 40)
             })
             .onChange(of: searchWord,
                       perform: { searchWord in
