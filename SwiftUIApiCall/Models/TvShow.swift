@@ -14,7 +14,7 @@ struct Show: Codable {
     let ended: String?
     let status: String
     let type: String
-    let language: String
+    let language: String?
     let url: String
     let officialSite: String?
     let rating: Rating
