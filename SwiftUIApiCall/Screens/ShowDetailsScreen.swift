@@ -21,7 +21,6 @@ struct ShowDetailsScreen: View {
         
             ScrollView {
 
-            
                 Text(tvShow.show.name)
                     .font(.largeTitle)
                     .padding()
@@ -45,9 +44,9 @@ struct ShowDetailsScreen: View {
                 }
                 .padding()
                 
-                if let url = URL(string: tvShow.show.webChannel?.officialSite ?? "") {
-                    NavigationLink(destination: SafariWebViewScreen(url: url)) {
-                        Text(tvShow.show.webChannel?.name ?? "Official web site")
+                if let url = URL(string: tvShow.show.officialSite ?? "") {
+                    NavigationLink(destination: WebViewScreen(url: url)) {
+                        Text(tvShow.show.officialSite ?? "Official web site")
                     }
                     .padding()
                 }
@@ -57,6 +56,8 @@ struct ShowDetailsScreen: View {
             }
             .padding()
         }
+        .navigationTitle(tvShow.show.name)
+        .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea(.all, edges: .top)
 
     }

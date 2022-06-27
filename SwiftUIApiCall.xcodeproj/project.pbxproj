@@ -14,8 +14,9 @@
 		436F42C928591A5B00478872 /* SearchShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42C828591A5B00478872 /* SearchShowsViewModel.swift */; };
 		436F42CD28591D6A00478872 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42CC28591D6A00478872 /* URLImage.swift */; };
 		436F42D128591F1A00478872 /* ShowDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F42D028591F1A00478872 /* ShowDetailsScreen.swift */; };
+		43C8C57E28696C04008ED3D8 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C8C57D28696C04008ED3D8 /* WebViewScreen.swift */; };
 		43FAD9332859E14800DE3B61 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9322859E14800DE3B61 /* TvShow.swift */; };
-		43FAD9382859F12B00DE3B61 /* SafariWebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9372859F12B00DE3B61 /* SafariWebViewScreen.swift */; };
+		43FAD9382859F12B00DE3B61 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9372859F12B00DE3B61 /* SafariWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		436F42C828591A5B00478872 /* SearchShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowsViewModel.swift; sourceTree = "<group>"; };
 		436F42CC28591D6A00478872 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		436F42D028591F1A00478872 /* ShowDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsScreen.swift; sourceTree = "<group>"; };
+		43C8C57D28696C04008ED3D8 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 		43FAD9322859E14800DE3B61 /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
-		43FAD9372859F12B00DE3B61 /* SafariWebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebViewScreen.swift; sourceTree = "<group>"; };
+		43FAD9372859F12B00DE3B61 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				436F42BA2859136500478872 /* SwiftUIApiCallApp.swift */,
+				43C8C57F28696FEA008ED3D8 /* Views */,
 				43FAD9362859E16C00DE3B61 /* Screens */,
 				43FAD9352859E16300DE3B61 /* ViewModels */,
 				43FAD9342859E15A00DE3B61 /* Models */,
@@ -78,6 +81,14 @@
 				436F42C12859136700478872 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43C8C57F28696FEA008ED3D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD9372859F12B00DE3B61 /* SafariWebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		43FAD9342859E15A00DE3B61 /* Models */ = {
@@ -101,7 +112,7 @@
 			children = (
 				436F42BC2859136500478872 /* SearchShowsScreen.swift */,
 				436F42D028591F1A00478872 /* ShowDetailsScreen.swift */,
-				43FAD9372859F12B00DE3B61 /* SafariWebViewScreen.swift */,
+				43C8C57D28696C04008ED3D8 /* WebViewScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -190,7 +201,8 @@
 				436F42D128591F1A00478872 /* ShowDetailsScreen.swift in Sources */,
 				436F42BB2859136500478872 /* SwiftUIApiCallApp.swift in Sources */,
 				436F42CD28591D6A00478872 /* URLImage.swift in Sources */,
-				43FAD9382859F12B00DE3B61 /* SafariWebViewScreen.swift in Sources */,
+				43FAD9382859F12B00DE3B61 /* SafariWebView.swift in Sources */,
+				43C8C57E28696C04008ED3D8 /* WebViewScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
