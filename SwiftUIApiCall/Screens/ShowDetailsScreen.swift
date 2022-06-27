@@ -26,16 +26,19 @@ struct ShowDetailsScreen: View {
                     .padding()
                 
                 if let genres: [String] = tvShow.show.genres {
+                    Divider()
+                    
                     HStack {
                         ForEach(genres, id: \.self) { genre in
                             Text(genre)
                                 .font(.footnote)
                         }
                     }
+                    
+                    Divider()
                 }
                 
                 HStack {
-                    
                     Text(tvShow.show.premiered?.appending(" -") ?? "")
                         .font(.footnote)
                     
@@ -55,10 +58,14 @@ struct ShowDetailsScreen: View {
                 .padding()
                 
                 if let url = URL(string: tvShow.show.officialSite ?? "") {
+                    Divider()
+                    
                     NavigationLink(destination: WebViewScreen(url: url)) {
                         Text(tvShow.show.officialSite ?? "Official web site")
                     }
                     .padding()
+                    
+                    Divider()
                 }
                 
                 Text(tvShow.stripHtmlTags(string: tvShow.show.summary ?? ""))
