@@ -61,7 +61,7 @@ struct ShowDetailsScreen: View {
                     .padding()
                 }
                 
-                Text(tvShow.show.summary ?? "")
+                Text(tvShow.stripHtmlTags(string: tvShow.show.summary ?? ""))
 
             }
             .background(.white)

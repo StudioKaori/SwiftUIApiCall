@@ -48,4 +48,8 @@ struct TvShow: Codable, Identifiable {
     let show: Show
     
     private enum CodingKeys : String, CodingKey { case show }
+    
+    func stripHtmlTags(string: String) -> String{
+        return string.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
 }
