@@ -21,6 +21,7 @@ struct Show: Codable {
     let schedule: Schedule
     let summary: String?
     let webChannel: WebChannel?
+    let genres: [String]?
 }
 
 struct Rating: Codable {

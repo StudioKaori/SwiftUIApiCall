@@ -46,6 +46,15 @@ struct SearchShowsScreen: View {
                                     Text(String(tvShow.show.rating.average ?? 0))
                                         .font(.footnote)
                                 }
+                                
+                                if let genres: [String] = tvShow.show.genres {
+                                    HStack {
+                                        ForEach(genres, id: \.self) { genre in
+                                            Text(genre)
+                                                .font(.footnote)
+                                        }
+                                    }
+                                }
                             }
 
                         }

@@ -25,7 +25,17 @@ struct ShowDetailsScreen: View {
                     .font(.largeTitle)
                     .padding()
                 
+                if let genres: [String] = tvShow.show.genres {
+                    HStack {
+                        ForEach(genres, id: \.self) { genre in
+                            Text(genre)
+                                .font(.footnote)
+                        }
+                    }
+                }
+                
                 HStack {
+                    
                     Text(tvShow.show.premiered?.appending(" -") ?? "")
                         .font(.footnote)
                     
@@ -54,6 +64,7 @@ struct ShowDetailsScreen: View {
                 Text(tvShow.show.summary ?? "")
 
             }
+            .background(.white)
             .padding()
         }
         .navigationTitle(tvShow.show.name)
