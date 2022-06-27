@@ -45,7 +45,7 @@ struct ShowDetailsScreen: View {
                 }
                 .padding()
                 
-                if let url = URL(string: tvShow.show.webChannel?.officialSite ?? "") {
+                if let url = URL(string: tvShow.show.officialSite ?? "") {
                     NavigationLink(destination: SafariWebViewScreen(url: url)) {
                         Text(tvShow.show.webChannel?.name ?? "Official web site")
                     }
