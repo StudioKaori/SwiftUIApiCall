@@ -19,45 +19,7 @@ struct SearchShowsScreen: View {
                 ForEach(searchShowsViewModel.tvShows) { tvShow in
                     
                     NavigationLink(destination: ShowDetailsScreen(tvShow: tvShow)) {
-                        HStack {
-                            URLImage(urlString: tvShow.show.image?
-                                .medium ?? "")
-                            .frame(width: 70, height: 70)
-                            .background(Color.gray)
-                            .cornerRadius(4)
-                            
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(tvShow.show.name)
-                                    .bold()
-                                
-                                HStack {
-                                    Text(tvShow.show.premiered?.prefix(4).appending(" -") ?? "")
-                                        .font(.footnote)
-                                    
-                                    Text(tvShow.show.ended?.prefix(4) ?? "")
-                                        .font(.footnote)
-                                    
-                                    Spacer()
-                                    
-                                    Image(systemName: "star.fill")
-                                        .font(.footnote)
-                                        .foregroundColor(Color.gray)
-                                    
-                                    Text(String(tvShow.show.rating.average ?? 0))
-                                        .font(.footnote)
-                                }
-                                
-                                if let genres: [String] = tvShow.show.genres {
-                                    HStack {
-                                        ForEach(genres, id: \.self) { genre in
-                                            Text(genre)
-                                                .font(.footnote)
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
+                        SearchResultListItemView(tvShow: tvShow)
                     }
                     .padding(.horizontal, 2)
                     .padding(.vertical, 6)

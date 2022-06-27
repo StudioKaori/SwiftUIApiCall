@@ -13,6 +13,7 @@ struct WebViewScreen: View {
     var body: some View {
         SafariWebView(url: url)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Official Web Site")
     }
 }
 
