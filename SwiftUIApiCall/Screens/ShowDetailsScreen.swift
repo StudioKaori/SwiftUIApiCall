@@ -61,7 +61,7 @@ struct ShowDetailsScreen: View {
                     Divider()
                     
                     NavigationLink(destination: WebViewScreen(url: url)) {
-                        Text(tvShow.show.officialSite ?? "Official web site")
+                        Text(tvShow.show.webChannel?.name ?? "Official web site")
                     }
                     .padding()
                     
