@@ -21,6 +21,7 @@ struct Show: Codable {
     let schedule: Schedule
     let summary: String?
     let webChannel: WebChannel?
+    let genres: [String]?
 }
 
 struct Rating: Codable {
@@ -47,4 +48,8 @@ struct TvShow: Codable, Identifiable {
     let show: Show
     
     private enum CodingKeys : String, CodingKey { case show }
+    
+    func stripHtmlTags(string: String) -> String{
+        return string.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
 }

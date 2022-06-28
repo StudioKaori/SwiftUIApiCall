@@ -21,10 +21,22 @@ struct ShowDetailsScreen: View {
         
             ScrollView {
 
-            
                 Text(tvShow.show.name)
                     .font(.largeTitle)
                     .padding()
+                
+                if let genres: [String] = tvShow.show.genres {
+                    Divider()
+                    
+                    HStack {
+                        ForEach(genres, id: \.self) { genre in
+                            Text(genre)
+                                .font(.footnote)
+                        }
+                    }
+                    
+                    Divider()
+                }
                 
                 HStack {
                     Text(tvShow.show.premiered?.appending(" -") ?? "")
@@ -46,17 +58,24 @@ struct ShowDetailsScreen: View {
                 .padding()
                 
                 if let url = URL(string: tvShow.show.officialSite ?? "") {
-                    NavigationLink(destination: SafariWebViewScreen(url: url)) {
-                        Text(tvShow.show.webChannel?.name ?? "Official web site")
+                    Divider()
+                    
+                    NavigationLink(destination: WebViewScreen(url: url)) {
+                        Text(tvShow.show.officialSite ?? "Official web site")
                     }
                     .padding()
+                    
+                    Divider()
                 }
                 
-                Text(tvShow.show.summary ?? "")
+                Text(tvShow.stripHtmlTags(string: tvShow.show.summary ?? ""))
 
             }
+            .background(.white)
             .padding()
         }
+        .navigationTitle(tvShow.show.name)
+        .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea(.all, edges: .top)
 
     }
